@@ -17,7 +17,10 @@
     "tsc": "tsc -p ./tsconfig.json --noEmit",
     "commit": "git-cz",
     "lint-staged": "lint-staged",
-    "prepare": "husky"
+    "prepare": "husky",
+    "exec:ts-node": "node --disable-warning=ExperimentalWarning --es-module-specifier-resolution=node --loader ts-node/esm",
+    "release": "pnpm exec:ts-node \"./scripts/release.ts\"",
+    "publish": "pnpm exec:ts-node \"./scripts/publish.ts\""
   },
   "keywords": [
     "taro",
@@ -67,8 +70,10 @@
     "gulp-babel": "^8.0.0",
     "gulp-cli": "^2.3.0",
     "husky": "^9.1.6",
+    "inquirer": "^12.4.2",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   },
   "config": {
