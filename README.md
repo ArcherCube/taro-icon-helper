@@ -87,6 +87,17 @@ svg源文件的目录。
 ### fontName
 字体名，即 @font-face 中 font-family 的名字。
 
+## CLI命令
+### update
+最常用的命令，即更新 svg 组件，用法为：
+```bash
+npm taro-icon-helper update
+```
+可选参数为 `--config` / `-c`，指定配置文件的路径，例如：
+```bash
+npm taro-icon-helper update -c ./custom-path/config-file.json
+```
+
 -------
 
 ## 支持平台
