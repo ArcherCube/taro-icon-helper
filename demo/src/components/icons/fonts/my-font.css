@@ -1,8 +1,7 @@
 @font-face {
   font-family: "my-font";
-  src: url('my-font.woff2?t=1740970163193') format('woff2'),
-  url('my-font.woff?t=1740970163193') format('woff'),
-  url('my-font.ttf?t=1740970163193') format('truetype');
+  src: url('my-font.woff?t=1740983593446') format('woff'),
+  url('my-font.ttf?t=1740983593446') format('truetype');
 }
 
 [class^="my-icon-"], [class*=" my-icon-"] {
