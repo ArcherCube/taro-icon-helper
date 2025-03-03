@@ -1,43 +1,33 @@
 /** 允许的 commit 类型 */
 const commitTypes = {
   feat: {
-    name: 'feat',
     desc: '新功能',
   },
   fix: {
-    name: 'fix',
     desc: '问题修复',
   },
   docs: {
-    name: 'docs',
     desc: '文档注释',
   },
   style: {
-    name: 'style',
     desc: '代码格式（不影响代码运行的变动）',
   },
   refactor: {
-    name: 'refactor',
     desc: '重构、优化（既不增加新功能，也不是修复bug）',
   },
   chore: {
-    name: 'chore',
     desc: '构建过程或辅助工具的变动',
   },
   perf: {
-    name: 'perf',
     desc: '性能优化',
   },
   demo: {
-    name: 'demo',
     desc: '示例',
   },
   revert: {
-    name: 'revert',
     desc: '回退',
   },
   build: {
-    name: 'build',
     desc: '打包',
   },
 };
@@ -62,9 +52,9 @@ export default {
       confirmCommit: '确定使用以上内容进行提交吗？',
     },
     skipQuestions: ['footerPrefix', 'footer'],
-    types: Object.values(commitTypes).map((item) => ({
-      value: item.name,
-      name: `${item.name}: ${' '.repeat(maxCommitTypeLength - item.name.length)}${item.desc}`,
+    types: Object.entries(commitTypes).map(([key, item]) => ({
+      value: key,
+      name: `${key}: ${' '.repeat(maxCommitTypeLength - key.length)}${item.desc}`,
     })),
     allowCustomScopes: false,
     allowEmptyScopes: true,
