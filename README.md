@@ -33,7 +33,8 @@ npm install taro-icon-helper --save-dev
 {
   "sourceDir": "./src/assets/svg",
   "outputDir": "./src/components/icons",
-  "className": "my-icon"
+  "className": "my-icon",
+  "fontName": "my-font"
 }
 ```
 详见[配置参数说明](#配置参数说明)
@@ -82,6 +83,9 @@ svg源文件的目录。
 
 ### className
 图标组件基础样式名。会同时作为图标字体样式名的前缀。
+
+### fontName
+字体名，即 @font-face 中 font-family 的名字。
 
 -------
 
