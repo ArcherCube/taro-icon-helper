@@ -1,6 +1,3 @@
-import fs from 'fs-extra';
-import path from 'path';
-import { Config } from '../../../type/config';
 import {
   componentsDir,
   componentsTemplateDir,
@@ -8,8 +5,11 @@ import {
   currentPath,
   fontIconTemplateDir,
   svgIconTemplateDir,
-} from '../../../constant';
-import { writeFile } from '../../utils/write-file';
+} from '@/constant';
+import { Config } from '@/type/config';
+import { writeFile } from '@/utils/write-file';
+import fs from 'fs-extra';
+import path from 'path';
 import { codeLines as fontIconComponentCodeLines } from './template/components/font-icon';
 import { codeLines as styleImportCodeLines } from './template/components/style';
 import { codeLines as styleDefineCodeLines } from './template/components/style/icon';

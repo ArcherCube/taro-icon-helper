@@ -1,10 +1,9 @@
-import ProgressBar from 'cli-progress';
 import chalk from 'chalk';
+import ProgressBar from 'cli-progress';
 import * as os from 'os';
 
 export const currentPath = process.cwd();
 
-export const fontName = 'font' as const;
 export const fontsDir = 'fonts' as const;
 export const componentsDir = 'components' as const;
 export const componentsTemplateDir = 'base' as const;
@@ -28,7 +27,7 @@ export const progressBarController = new ProgressBar.MultiBar({
     const incompleteCharCount = BAR_MAX_CHAR_COUNT - completeCharCount;
     if (params.value < params.total) {
       const bar = `${COMPLETE_CHAR.repeat(completeCharCount)}${INCOMPLETE_CHAR.repeat(incompleteCharCount)}`;
-      return `${payload.name} [${bar}] ${payload.current}`;
+      return `[${bar}] ${payload.current}`;
     }
 
     return `${chalk.green('\u2714')} ${payload.current}`;

@@ -13,7 +13,10 @@ const build = () => {
           ['@babel/preset-env', { targets: { node: 'current' }, modules: false }],
           ['@babel/preset-typescript', { ignore: ['**/*.d.ts', 'node_modules/**/*.ts', '**/*.js'] }],
         ],
-        plugins: [['add-import-extension', { extension: 'js' }]],
+        plugins: [
+          ['add-import-extension', { extension: 'js' }],
+          ['tsconfig-paths-module-resolver', {}],
+        ],
       }),
     )
     .pipe(gulp.dest(outputPath));

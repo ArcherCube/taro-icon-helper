@@ -1,12 +1,12 @@
 @font-face {
-  font-family: "font";
-  src: url('font.woff2?t=1740814795370') format('woff2'),
-  url('font.woff?t=1740814795370') format('woff'),
-  url('font.ttf?t=1740814795370') format('truetype');
+  font-family: "my-font";
+  src: url('my-font.woff2?t=1740970163193') format('woff2'),
+  url('my-font.woff?t=1740970163193') format('woff'),
+  url('my-font.ttf?t=1740970163193') format('truetype');
 }
 
 [class^="my-icon-"], [class*=" my-icon-"] {
-  font-family: 'font' !important;font-size: inherit;
+  font-family: 'my-font' !important;font-size: inherit;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

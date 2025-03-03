@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
+import { currentPath } from '@/constant';
+import { generate } from '@/generate';
 import { Command } from 'commander';
 import fs from 'fs-extra';
 import path from 'path';
-import { currentPath } from '../constant';
-import { updateIcon } from '../update';
 
 const program = new Command();
 
@@ -20,7 +20,7 @@ program.command('update').action(async () => {
 
     const config = JSON.parse(configSource);
 
-    await updateIcon(config);
+    await generate(config);
   } else {
     throw new Error(`在 ${currentPath} 找不到 ${CONFIG_FILE_NAME}，请检查配置文件及执行路径。`);
   }

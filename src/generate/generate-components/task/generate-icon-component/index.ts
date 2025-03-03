@@ -1,7 +1,7 @@
+import { componentsTemplateDir, fontIconTemplateDir, svgIconTemplateDir } from '@/constant';
+import { writeFile } from '@/utils/write-file';
 import fs from 'fs-extra';
 import * as path from 'path';
-import { componentsTemplateDir, fontIconTemplateDir, svgIconTemplateDir } from '../../../constant';
-import { writeFile } from '../../utils/write-file';
 import { generateComment } from './generate-comment';
 
 type GenerateComponentParams = {
@@ -12,10 +12,8 @@ type GenerateComponentParams = {
   className: string;
   iconName: string;
 };
-// @ts-ignore
-export const fileFullPath = import.meta.url;
 
-export default async (params: GenerateComponentParams) => {
+export const generateIconComponent = async (params: GenerateComponentParams) => {
   const { svgSourcePath, componentsRootDir, iconNameCamelCase, filename, className, iconName } = params;
 
   const fileSource = await fs.readFile(svgSourcePath, { encoding: 'utf-8' });

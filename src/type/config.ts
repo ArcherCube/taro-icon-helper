@@ -5,4 +5,6 @@ export type Config = {
   outputDir: string;
   /** 图标组件基础样式名。会同时作为图标字体css class前缀 */
   className: string;
+  /** 字体名 */
+  fontName: string;
 };

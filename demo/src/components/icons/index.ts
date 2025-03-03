@@ -1,2 +1,2 @@
-import './fonts/font.css';
+import './fonts/my-font.css';
 export * from './components'

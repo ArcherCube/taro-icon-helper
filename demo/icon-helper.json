@@ -1,5 +1,6 @@
 {
   "sourceDir": "./src/assets/svg",
   "outputDir": "./src/components/icons",
-  "className": "my-icon"
+  "className": "my-icon",
+  "fontName": "my-font"
 }
