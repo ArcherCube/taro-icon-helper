@@ -27,8 +27,8 @@ const commitTypes = {
   revert: {
     desc: '回退',
   },
-  build: {
-    desc: '打包',
+  release: {
+    desc: '发布',
   },
 };
 /** 最长的 commitType 的名字，方便后续生成 prompt 时不用重复计算 */
