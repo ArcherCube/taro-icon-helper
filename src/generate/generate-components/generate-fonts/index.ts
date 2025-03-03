@@ -36,6 +36,6 @@ export const generateFonts = ({ sourceDir, outputDir, classNamePrefix, fontName 
       centerVertically: true,
       // descent: 7,
     },
-    excludeFormat: ['svg', 'symbol.svg', 'eot'],
+    excludeFormat: ['svg', 'symbol.svg', 'eot', 'woff2'],
   });
 };
