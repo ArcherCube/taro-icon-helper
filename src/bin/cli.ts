@@ -5,25 +5,48 @@ import { generate } from '@/generate';
 import { Command } from 'commander';
 import fs from 'fs-extra';
 import path from 'path';
+import { CliOption, type InputOptions, registerOptions } from './register-options';
 
 const program = new Command();
 
-const CONFIG_FILE_NAME = 'icon-helper.json';
+// -------------------------------------------- update --------------------------------------------
+(() => {
+  const CONFIG_FILE_NAME = 'icon-helper.json';
 
-program.command('update').action(async () => {
-  const configFilePath = path.resolve(currentPath, `./${CONFIG_FILE_NAME}`);
+  const UPDATE_OPTIONS = [
+    {
+      name: 'config' as const,
+      params: [{ name: 'configFilePath', required: true }],
+      shortcut: 'c',
+      description: '指定配置文件',
+    },
+  ] satisfies CliOption[];
 
-  const isConfigFileExist = await fs.exists(configFilePath);
+  const updateCommand = program.command('update');
+  registerOptions(updateCommand, UPDATE_OPTIONS);
 
-  if (isConfigFileExist) {
-    const configSource = await fs.readFile(configFilePath, { encoding: 'utf8' });
+  updateCommand.action(async (options: InputOptions<typeof UPDATE_OPTIONS>) => {
+    let configFilePath = path.resolve(currentPath, `./${CONFIG_FILE_NAME}`);
+    if (options.config) {
+      if (path.isAbsolute(options.config)) {
+        configFilePath = options.config;
+      } else {
+        configFilePath = path.resolve(currentPath, options.config);
+      }
+    }
 
-    const config = JSON.parse(configSource);
+    const isConfigFileExist = await fs.exists(configFilePath);
 
-    await generate(config);
-  } else {
-    throw new Error(`在 ${currentPath} 找不到 ${CONFIG_FILE_NAME}，请检查配置文件及执行路径。`);
-  }
-});
+    if (isConfigFileExist) {
+      const configSource = await fs.readFile(configFilePath, { encoding: 'utf8' });
+
+      const config = JSON.parse(configSource);
+
+      await generate(config);
+    } else {
+      throw new Error(`找不到 ${configFilePath}，请检查配置文件及执行路径。`);
+    }
+  });
+})();
 
 program.parse();
