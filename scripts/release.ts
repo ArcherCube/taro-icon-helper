@@ -69,7 +69,7 @@ const BUMP_TYPE_ENUM = ['major', 'minor', 'patch'] as const;
     },
   ]);
   if (!answer.isConfirm) {
-    return;
+    throw 'cancel release';
   }
 
   // 更新package.json

@@ -17,10 +17,10 @@
     "tsc": "tsc -p ./tsconfig.json --noEmit",
     "commit": "git-cz",
     "lint-staged": "lint-staged",
-    "prepare": "husky",
+    "postinstall": "husky",
     "exec:ts-node": "node --disable-warning=ExperimentalWarning --es-module-specifier-resolution=node --loader ts-node/esm",
     "release": "pnpm exec:ts-node \"./scripts/release.ts\"",
-    "publish": "pnpm exec:ts-node \"./scripts/publish.ts\""
+    "prepublishOnly": "pnpm exec:ts-node \"./scripts/publish.ts\""
   },
   "keywords": [
     "taro",

@@ -6,7 +6,7 @@ import { MAIN_BRANCH_NAME, NPM_REGISTRY } from './constant';
   // 检查未提交的变更
   const uncommitChange = await getUncommitChanges();
   if (uncommitChange) {
-    throw 'you have uncommitted changes, please commit before release.\n';
+    throw 'you have uncommitted changes, please commit before publish.\n';
   }
 
   const currentBranch = await getCurrentBranch();
@@ -37,15 +37,14 @@ import { MAIN_BRANCH_NAME, NPM_REGISTRY } from './constant';
     const question = `you are about to publish ${packageJson.version} as ${username}\n\n${message}\n\nconfirm to publish?`;
     const answer = await inquirer.prompt([{ type: 'confirm', name: 'isConfirm', message: question }]);
     if (!answer.isConfirm) {
-      return;
+      throw 'cancel publish';
     }
-
-    await execCommand(`npm publish`);
   } catch (e) {
-    console.error(e);
+    throw e;
   } finally {
     await execCommand(`npm set registry ${oldRegistry}`);
   }
 })().catch((e) => {
   console.error(e);
+  process.exit(1);
 });
