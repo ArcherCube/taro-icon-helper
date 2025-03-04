@@ -44,7 +44,7 @@ const program = new Command();
 
       await generate(config);
     } else {
-      throw new Error(`找不到 ${configFilePath}，请检查配置文件及执行路径。`);
+      throw `找不到 ${configFilePath}，请检查配置文件及执行路径。`;
     }
   });
 })();

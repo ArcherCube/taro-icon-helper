@@ -7,4 +7,6 @@ export type Config = {
   className: string;
   /** 字体名 */
   fontName: string;
+  /** 是否为typescript。默认为true。 */
+  typescript?: boolean;
 };
