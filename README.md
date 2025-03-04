@@ -73,19 +73,21 @@ export const Demo = () => {
 ## 配置参数说明
 
 ### sourceDir
-svg源文件的目录。
+必填，svg源文件的目录。
 > svg文件需要以短横线风格命名，否则将影响生成的组件名。
 
 ### outputDir
-
-生成的组件的目录。
+必填，生成的组件的目录。
 > 生成的组件名为svg文件名的大驼峰。
 
 ### className
-图标组件基础样式名。会同时作为图标字体样式名的前缀。
+必填，图标组件基础样式名。会同时作为图标字体样式名的前缀。
 
 ### fontName
-字体名，即 @font-face 中 font-family 的名字。
+必填，字体名，即 @font-face 中 font-family 的名字。
+
+### typescript
+boolean 类型，可选，表示是否生成为typescript。默认为true。
 
 ## CLI命令
 ### update
@@ -124,10 +126,6 @@ npm taro-icon-helper update -c ./custom-path/config-file.json
   }
 }
 ```
-
-### 只能生成 typescript 吗？
-目前来说确实是这样。后续会加入生成 js 的配置项。
-
 ### 为什么要做这个库？
 在微信小程序使用图标，往往会碰到以下几个问题：
 <ol>
