@@ -42,9 +42,7 @@ export const generateComponents = async (config: Config) => {
   const fixedSvgDir = fs.mkdtempSync(path.resolve(tempDir, 'icons-cli-svg-fixed-'), { encoding: 'utf-8' });
   const componentsRootDir = path.resolve(currentPath, outputDir, componentsDir);
 
-  // 清理目录
-  progressBar.update({ current: '清理目录...' });
-  await fs.remove(componentsRootDir);
+  // 创建目录
   await fs.mkdir(componentsRootDir);
 
   // 生成基础组件

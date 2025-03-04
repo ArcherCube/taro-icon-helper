@@ -9,9 +9,9 @@ export const generate = async (config: Config) => {
   console.time('执行时间');
   const rootPath = path.resolve(currentPath, config.outputDir);
 
-  if (!(await fs.exists(rootPath))) {
-    await fs.mkdir(rootPath, {});
-  }
+  // 清理目录
+  await fs.remove(rootPath);
+  await fs.mkdir(rootPath, {});
 
   await Promise.all([
     // 生成组件

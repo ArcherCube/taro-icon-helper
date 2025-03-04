@@ -11,7 +11,6 @@ export const generateFonts = ({ sourceDir, outputDir, classNamePrefix, fontName 
   return svgToFont({
     src: sourceDir,
     dist: outputDir,
-    emptyDist: true,
     fontName,
     classNamePrefix,
     css: {
