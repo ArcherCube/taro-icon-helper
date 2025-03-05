@@ -13,7 +13,7 @@ const currentFilePath = import.meta.url.slice('file://'.length);
 const generateTask = new Piscina<TaskParams>({
   filename: path.resolve(currentFilePath, '../task/index.js'),
   minThreads: cpus.length / 2,
-  maxThreads: cpus.length / 2,
+  maxThreads: cpus.length,
 });
 
 const parseCamelCase = (origin: string) => {
