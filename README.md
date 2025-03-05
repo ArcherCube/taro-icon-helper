@@ -1,5 +1,10 @@
 # taro-icon-helper
+
 在 taro 项目中以 React 组件形式使用 svg 作为 Icon。
+
+[![](https://img.shields.io/npm/v/taro-icon-helper)](https://www.npmjs.com/package/taro-icon-helper)
+[![](https://img.shields.io/npm/dm/taro-icon-helper)](https://www.npmjs.com/package/taro-icon-helper)
+
 
 ## 特性
 <ol>
