@@ -4,6 +4,7 @@ import fs from 'fs-extra';
 import path from 'path';
 import { createExportIndex } from './create-export-index';
 import { generateComponents } from './generate-components';
+import { parseJavascript } from './parse-javascript';
 
 export const generate = async (config: Config) => {
   console.time('执行时间');
@@ -19,6 +20,10 @@ export const generate = async (config: Config) => {
     // 创建导出index文件
     createExportIndex(config),
   ]);
+
+  if (config.typescript === false) {
+    await parseJavascript(config);
+  }
 
   progressBarController.stop();
   console.timeEnd('执行时间');
