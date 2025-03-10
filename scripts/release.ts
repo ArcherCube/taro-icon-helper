@@ -20,6 +20,13 @@ const BUMP_TYPE_ENUM = ['major', 'minor', 'patch'] as const;
     throw `you are not in main branch.\n`;
   }
 
+  // 获取到目前为止差异的commit
+  const commits = await getDiffCommits();
+
+  if (!commits.length) {
+    throw `you have no new commits.\n`;
+  }
+
   // 整理bumpType
   let bumpType = process.argv[2] as (typeof BUMP_TYPE_ENUM)[number];
   if (!bumpType || !BUMP_TYPE_ENUM.includes(bumpType)) {
@@ -30,9 +37,6 @@ const BUMP_TYPE_ENUM = ['major', 'minor', 'patch'] as const;
       });
   }
   const bumpTypeIndex = BUMP_TYPE_ENUM.indexOf(bumpType);
-
-  // 获取到目前为止差异的commit
-  const commits = await getDiffCommits();
 
   // 整理变更的内容
   const changeLog = commits
