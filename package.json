@@ -17,7 +17,7 @@
     "tsc": "tsc -p ./tsconfig.json --noEmit",
     "commit": "git-cz",
     "lint-staged": "lint-staged",
-    "postinstall": "husky",
+    "prepare": "husky",
     "exec:ts-node": "node --disable-warning=ExperimentalWarning --es-module-specifier-resolution=node --loader ts-node/esm",
     "release": "pnpm exec:ts-node \"./scripts/release.ts\"",
     "prepublishOnly": "pnpm exec:ts-node \"./scripts/publish.ts\""
@@ -76,6 +76,9 @@
     "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "config": {
     "commitizen": {
