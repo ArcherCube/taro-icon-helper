@@ -1,6 +1,6 @@
 {
   "name": "taro-icon-helper",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "在taro项目中以React组件形式使用svg作为Icon",
   "type": "module",
   "bin": {
