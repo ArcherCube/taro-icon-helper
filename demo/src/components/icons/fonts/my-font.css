@@ -1,7 +1,7 @@
 @font-face {
   font-family: "my-font";
-  src: url('my-font.woff?t=1740983593446') format('woff'),
-  url('my-font.ttf?t=1740983593446') format('truetype');
+  src: url('my-font.woff?t=1741921878166') format('woff'),
+  url('my-font.ttf?t=1741921878166') format('truetype');
 }
 
 [class^="my-icon-"], [class*=" my-icon-"] {
@@ -13,18 +13,19 @@
 
 
 .my-icon-add-image-outlined::before { content: "\ea01"; }
-.my-icon-check-outlined::before { content: "\ea02"; }
-.my-icon-cross-circle-outlined::before { content: "\ea03"; }
-.my-icon-cross-outlined::before { content: "\ea04"; }
-.my-icon-down-filled::before { content: "\ea05"; }
-.my-icon-down-outlined::before { content: "\ea06"; }
-.my-icon-home-outlined::before { content: "\ea07"; }
-.my-icon-left-filled::before { content: "\ea08"; }
-.my-icon-left-outlined::before { content: "\ea09"; }
-.my-icon-loading-outlined::before { content: "\ea0a"; }
-.my-icon-right-filled::before { content: "\ea0b"; }
-.my-icon-right-outlined::before { content: "\ea0c"; }
-.my-icon-up-filled::before { content: "\ea0d"; }
-.my-icon-up-outlined::before { content: "\ea0e"; }
+.my-icon-bell-filled::before { content: "\ea02"; }
+.my-icon-check-outlined::before { content: "\ea03"; }
+.my-icon-cross-circle-outlined::before { content: "\ea04"; }
+.my-icon-cross-outlined::before { content: "\ea05"; }
+.my-icon-down-filled::before { content: "\ea06"; }
+.my-icon-down-outlined::before { content: "\ea07"; }
+.my-icon-home-outlined::before { content: "\ea08"; }
+.my-icon-left-filled::before { content: "\ea09"; }
+.my-icon-left-outlined::before { content: "\ea0a"; }
+.my-icon-loading-outlined::before { content: "\ea0b"; }
+.my-icon-right-filled::before { content: "\ea0c"; }
+.my-icon-right-outlined::before { content: "\ea0d"; }
+.my-icon-up-filled::before { content: "\ea0e"; }
+.my-icon-up-outlined::before { content: "\ea0f"; }
 
 

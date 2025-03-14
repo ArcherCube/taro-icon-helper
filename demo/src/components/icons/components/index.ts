@@ -1,4 +1,5 @@
 export { AddImageOutlined } from './add-image-outlined';
+export { BellFilled } from './bell-filled';
 export { CheckOutlined } from './check-outlined';
 export { CrossCircleOutlined } from './cross-circle-outlined';
 export { CrossOutlined } from './cross-outlined';
