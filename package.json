@@ -12,6 +12,7 @@
     "build:clean": "rm -rf ./dist",
     "build:gulp": "gulp",
     "build": "pnpm build:clean && pnpm build:gulp",
+    "start": "watch 'pnpm build' src",
     "commitlint": "commitlint --edit",
     "lint": "eslint --ext .js,.ts  --max-warnings 0 \"./\" ",
     "tsc": "tsc -p ./tsconfig.json --noEmit",
@@ -75,7 +76,8 @@
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "watch": "^1.0.2"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
