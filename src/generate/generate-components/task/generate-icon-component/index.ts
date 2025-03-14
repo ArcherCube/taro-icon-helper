@@ -26,7 +26,7 @@ export const generateIconComponent = async (params: GenerateComponentParams) => 
     generateComment({ name: filename, source: fileSource }),
     `export const ${iconNameCamelCase}: React.FC<${iconNameCamelCase}Props> = (props) => {`,
     `  if (props.color) {`,
-    `    return <SvgIcon type={svgSource} {...props} />;`,
+    `    return <SvgIcon type={svgSource} color={props.color} {...props} />;`,
     `  }`,
     `  return <FontIcon type='${className}-${iconName}' {...props} />;`,
     `};`,
