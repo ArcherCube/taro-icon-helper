@@ -22,7 +22,7 @@ export const generateIconComponent = async (params: GenerateComponentParams) => 
     `import { Icon as SvgIcon } from './${componentsTemplateDir}/${svgIconTemplateDir}';`,
     `import { Icon as FontIcon } from './${componentsTemplateDir}/${fontIconTemplateDir}';`,
     `import svgSource from '${path.relative(componentsRootDir, svgSourcePath)}';`,
-    `export type ${iconNameCamelCase}Props = Omit<React.ComponentProps<typeof SvgIcon> & React.ComponentProps<typeof FontIcon>, 'type'>;`,
+    `export type ${iconNameCamelCase}Props = Partial<Omit<React.ComponentProps<typeof SvgIcon> & React.ComponentProps<typeof FontIcon>, 'type'>>;`,
     generateComment({ name: filename, source: fileSource }),
     `export const ${iconNameCamelCase}: React.FC<${iconNameCamelCase}Props> = (props) => {`,
     `  if (props.color) {`,
